@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+</head>
+<body>
+    <p>用户名:</p>{{user.username}}
+    <p>性别:</p>
+    {% if user.gender %}
+        <p>男</p>
+    {% else %}
+        <p>nv</p>
+    {% endif %}
+    <p>爱好:</p>
+    {% for i in hobby%}
+        <span>{{i}} </span>
+    {% endfor %}
+    <p>照片:</p>
+    <img src="{{user.photo_path}}" width="200px" height="100px" alt="">
+    <p>籍贯:</p>{{user.native_place}}
+    <p>自我介绍:</p>{{user.introduce}}
+    <a href="/login/modified/">修改个人信息</a>
+</body>
+</html>

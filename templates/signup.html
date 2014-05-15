@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+    <form id="signup_form" method="POST" action="/signup/submit/" enctype="multipart/form-data">
+        <label for="">用户名</label>
+        <input type="text" name="username" id="username" class="base_input user_input">
+        <br>
+        <label for="">密码:</label>
+        <input id="password" type="password" name="password" id="" class="required base_input pass_input">
+        <br>
+        <label for="">重复密码:</label>
+        <input type="password" id="password_again" name="password_again" id="" class="required base_input pass_again_input">
+        <br>
+        <label for="">性别</label>
+        <input name="gender" class="radio_input" type="radio" value='1'>
+        <label for="">男</label>
+        <input name="gender" class="radio_input" type="radio" value='0'>
+        <label for="">女</label>
+        <br>
+        <label for="">爱好</label>
+        <input type="checkbox" class="check_input" name="basketball" id="">
+        <label for="">篮球</label>
+        <input type="checkbox" class="check_input" name="soccer" id="">
+        <label for="">足球</label>
+        <input type="checkbox" class="check_input" name="music" id="">
+        <label for="">音乐</label>
+        <input type="checkbox" class="check_input" name="ec" id="">
+        <label for="">电子竞技</label>
+        <br>
+        <label for="">籍贯</label>
+        <select name="province" id="province">
+        </select>
+        <label for="">省</label>
+        <select name="city" id="city">
+        </select>
+        <label for="">市</label>
+        <br>
+        <label for="">照片</label>
+        <input type="file" name="photo" id="">
+        <img src="" alt="">
+        <br>
+        <label for="">自我介绍</label>
+        <br>
+        <textarea name="introduce" id="" cols="30" rows="10"></textarea>
+        <br>
+        <label for="">验证码</label>
+        <input id="code_content" name="code" type="text">
+        <div id="code_result" result=''></div>
+        <br>
+        <img src="code/" width="150",height="50">
+        <br>
+        <button id="submit_1" type="button">注册</button>
+        <button type="reset">重置</button>
+    </form>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.js"></script>
+    <script type="text/javascript" src="js/signup.js"></script>
+    <script type="text/javascript" src="js/jQuery.md5.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>
+</html>
