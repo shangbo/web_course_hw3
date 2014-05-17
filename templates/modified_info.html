@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>修改用户信息</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/flat-ui.css">
     <link rel="stylesheet" type="text/css" href="/css/modified_info.css">
 </head>
 <body>
@@ -18,7 +18,7 @@
             </div>
             <div class="form-group">
             <label for="">密码:</label>
-            <input id="password" type="password" name="password" id="" class="form-control">
+            <input id="password" type="password" name="password"  class="form-control">
             </div>
             <div class="form-group">
             <label for="">重复密码:</label>
@@ -26,39 +26,56 @@
             </div>
             <div class="form-group">
                 <label for="">性别</label>
-                <div class="checkbox">
-                    <input name="gender" class="radio_input" type="radio" value='1'>
-                    <label for="">男</label>
-                </div>
-                <div class="checkbox">
-                        <input name="gender" class="radio_input" type="radio" value='0'>
-                        <label for="">女</label>                    
-                </div>
+                <label class="radio" for="male">
+                        <span class="icon"></span>
+                        <span class="icon-to-fade"></span>
+                        <input name="gender" id="male" type="radio" value='1' >
+                        男
+                </label>
+                <label class="radio" for="female">
+                        <span class="icon"></span>
+                        <span class="icon-to-fade"></span>
+                        <input name="gender" class="radio_input" type="radio" value='0' id="female">
+                        女
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="">出生日期</label>
+                <br>
+                <input type="date">
             </div>
             <div class="form-group">
                 <label for="">爱好</label>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" class="check_input" name="basketball" id="">
-                        <label for="">篮球</label>
+                <div >
+                    <label class="checkbox" for="basketball">
+                        <span class="icon"></span>
+                        <span class="icon-to-fade"></span>
+                        <input type="checkbox" name="basketball" id="basketball">
+                        篮球
                     </label>
                 </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" class="check_input" name="soccer" id="">
-                        <label for="">足球</label>
+                <div >
+                    <label class="checkbox" for="soccer">
+                        <span class="icon"></span>
+                        <span class="icon-to-fade"></span>
+                        <input type="checkbox"  name="soccer" id="soccer">
+                        足球
                     </label>
                 </div>
-                <div class="checkbox">
-                    <label for="">
-                        <input type="checkbox" class="check_input" name="music" id="">
-                        <label for="">音乐</label>
+                <div >
+                    <label class="checkbox" for="music">
+                        <span class="icon"></span>
+                        <span class="icon-to-fade"></span>
+                        <input type="checkbox" name="music" id="music">
+                        音乐
                     </label>
                 </div>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" class="check_input" name="ec" id="">
-                        <label for="">电子竞技</label>
+               <div >
+                    <label class="checkbox" for="ec">
+                        <span class="icon"></span>
+                        <span class="icon-to-fade"></span>
+                        <input type="checkbox" name="ec" id="ec">
+                        电子竞技
                     </label>
                 </div>
             </div>
@@ -76,10 +93,10 @@
             <div class="form-group">
                 <label for="">自我介绍</label>
                 <br>
-                <textarea class="form-group" name="introduce" id="" rows="3" cols="115"></textarea>
+                <textarea class="form-group" name="introduce" id="" rows="3" cols="90"></textarea>
             </div>
-            <button id="submit" class="btn btn-primary" type="submit">更新</button>
-            <button class="btn btn-warning" type="reset">重置</button>
+            <button id="submit" class="btn btn-large btn-block btn-primary" type="submit">更新</button>
+            <button class="btn btn-large btn-block btn-danger" type="reset">重置</button>
             <a class="toright" href="/login/">返回登录</a>
         </form>
 
@@ -88,6 +105,8 @@
     {% endif %}
     </div>
     <script type="text/javascript" src="/js/jquery.js"></script>
+    <script src="/js/flatui-checkbox.js"></script>
+    <script src="/js/flatui-radio.js"></script>
     <script type="text/javascript" src="/js/jquery.validate.js"></script>
     <script type="text/javascript" src="/js/modified.js"></script>
     <script type="text/javascript" src="/js/jQuery.md5.js"></script>
