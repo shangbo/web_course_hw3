@@ -1,0 +1,27 @@
+.search_div {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 15%; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.toright {
+    margin-left: 20%;
+}
+
+#username {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#submit_1 {
+    width: 20%;
+    margin: 20px 40%;
+}
+

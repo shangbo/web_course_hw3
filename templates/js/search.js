@@ -70,7 +70,7 @@ jQuery(document).ready(function($) {
                     else
                     {
                         string2 = $('<br><img width="200px" height="100px"/><br>');
-                        string2.attr('src',temp_string2);
+                        string2.attr('src','/'+temp_string2);
                         $('#result_div').append(string2);       
                     }
                     

@@ -1,0 +1,23 @@
+.login_form_div {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 6%; 
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.toright {
+    margin-left: 20%;
+}
+
+#title {
+    margin-left: 20%;
+    margin-top: 3%;
+
+}

@@ -73,51 +73,51 @@ jQuery(document).ready(function($) {
                 console.log(data);
                 if(data === '1')
                 {
-                    $('#username').empty();
-                    $('#username').after("用户名已经注册.");
+                    $('#username_result').empty();
+                    $('#username_result').append("用户名已经注册.");
                     error = 1;
                 }
                 else if (data==='0')
                 {
-                    $('#username').empty();
-                    $('#username').after("用户名没有注册.");
+                    $('#username_result').empty();
+                    $('#username_result').append("用户名没有注册.");
+                    var code = $('#code_content').val();
+                    $.ajax({
+                        url: 'decode/',
+                        type: 'GET',
+                        data: {'code': code}
+                    })
+                    .done(function(data) {
+                        console.log("success"+data);
+                        if(data === '1')
+                        {
+                            $('#code_result').empty();
+                            $('#code_result').append("验证码正确");
+                            $('#signup_form').submit()
+                        }
+                        else if(data === '0')
+                        {
+                            $('#code_result').empty();
+                            $('#code_result').append("验证码错误");
+                        }
+                        else
+                        {
+                            $('#code_result').empty();
+                            $('#code_result').append("验证码错误");
+                        }
+                    })
+                    .fail(function() {
+                        console.log("error");
+                    })
+                    .always(function() {
+                        console.log("complete");
+                    });
                 }
                 else
                 {
-                    $('#username').empty();
-                    $('#username').after("出错了");
+                    $('#username_result').empty();
+                    $('#username_result').append("出错了");
                 }
-                var code = $('#code_content').val();
-                $.ajax({
-                    url: 'decode/',
-                    type: 'GET',
-                    data: {'code': code}
-                })
-                .done(function(data) {
-                    console.log("success"+data);
-                    if(data === '1')
-                    {
-                        $('#code_result').empty();
-                        $('#code_result').append("验证码正确");
-                        $('#signup_form').submit()
-                    }
-                    else if(data === '0')
-                    {
-                        $('#code_result').empty();
-                        $('#code_result').append("验证码错误");
-                    }
-                    else
-                    {
-                        $('#code_result').empty();
-                        $('#code_result').append("验证码错误");
-                    }
-                })
-                .fail(function() {
-                    console.log("error");
-                })
-                .always(function() {
-                    console.log("complete");
-                });
             })
             .fail(function() {
                 console.log("error");

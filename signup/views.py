@@ -19,7 +19,7 @@ def signup_submit(request):
         password = post.get('password','')
         gender = post.get('gender','')
         if gender:
-            gender = gender[0]
+            gender = int(gender[0])
         introduce = post.get('introduce','')
         if introduce:
             introduce = introduce[0]

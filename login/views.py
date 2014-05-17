@@ -37,32 +37,37 @@ def login_submit(request):
         post = dict(request.POST.iterlists())
         username = post.get('username', '')
         global USERNAME
-        USERNAME = username[0]
+        
         password = post.get('password', '')
-        user = LoginUser.objects.filter(username=username[0])
-        hobby = []
-        h = user[0].hobby
-        h = h.split(' ')
-        for i in h:
-            if i == '1':
-                hobby.append('篮球')
-            if i == '2':
-                hobby.append('足球')
-            if i == '3':
-                hobby.append('音乐')
-            if i == '4':
-                hobby.append('电子竞技')
-        if user:
-            if user[0].check_password(password[0]):
-                # auth_login(request, user[0])
-                return render(request, 'login_success.html',{'user':user[0],'hobby':hobby})
-                # return HttpResponse('shang')
+        if username[0]:
+            USERNAME = username[0]
+            user = LoginUser.objects.filter(username=username[0])
+            hobby = []
+            h = user[0].hobby
+            h = h.split(' ')
+            for i in h:
+                if i == '1':
+                    hobby.append('篮球')
+                if i == '2':
+                    hobby.append('足球')
+                if i == '3':
+                    hobby.append('音乐')
+                if i == '4':
+                    hobby.append('电子竞技')
+            if user:
+                if user[0].check_password(password[0]):
+                    # auth_login(request, user[0])
+                    return render(request, 'login_success.html',{'user':user[0],'hobby':hobby})
+                    # return HttpResponse('shang')
+                else:
+                    reason.append("密码错误")
             else:
-                reason.append("密码错误")
+                reason.append("用户名错误")
+            return render(request, 'login_failed.html',{'reason':reason})
         else:
-            reason.append("用户名错误")
-        return render(request, 'login_failed.html',{'reason':reason})
-
+            return render(request, 'login_failed.html')
+    else:
+            return render(request, 'login_failed.html')
 
 def modified(request):
     return render(request,'modified_info.html',{'username':USERNAME})
@@ -87,11 +92,13 @@ def modified_submit(request):
 
     gender = post.get('gender','')
     if gender:
-        gender = gender[0]
+        gender = int(gender[0])
+        print type(gender)
     else:
         gender = ''
-    if gender:
+    if gender != '':
         user0.gender = gender
+
 
     province = post.get("province")
     if province and province[0]!= u'无':
@@ -137,7 +144,7 @@ def modified_submit(request):
     if photo_path:
         user0.photo_path = photo_path
     user0.save()
-    return HttpResponse('dsad')
+    return HttpResponse('成功')
 
 
 

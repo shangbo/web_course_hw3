@@ -1,0 +1,22 @@
+.signup_form_div {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 3%; 
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+}
+
+.toright {
+    margin-left: 20%;
+}
+
+
+#title {
+    margin-left: 10%;
+}
